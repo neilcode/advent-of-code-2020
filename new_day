@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir days/day_$1
+mkdir spec/day_$1
+printf "module Day$1\n  module Solution\n    module_function\n  end\nend" > days/day_$1/solution.rb
+touch days/day_$1/input.txt
+printf "require 'rspec'\nrequire_relative '../../days/day_$1/solution.rb'\n\nRSpec.describe Day$1::Solution do\n\nend" > spec/day_$1/solution_spec.rb
+
+#generator go brrrr
